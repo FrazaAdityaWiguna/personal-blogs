@@ -1,0 +1,57 @@
+{
+  "name": "Blogs",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Fraza",
+  "scripts": {
+    "dev": "cross-env ENVFILE=env/.env.development bash scripts/run-dev.sh",
+    "build:dev": "cross-env ENVFILE=env/.env.development bash scripts/build-dev.sh",
+    "start": "cross-env ENVFILE=env/.env.development bash scripts/start-dev.sh",
+    "type-check": "tsc --pretty --noEmit",
+    "lint": "eslint . --ext ts --ext tsx --ext js --cache --fix --max-warnings 0",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.css": [
+      "prettier --write --parser css"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
+    ],
+    "cypress/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.35.3",
+    "@types/node": "20.6.3",
+    "@types/react": "18.2.22",
+    "@types/react-dom": "18.2.7",
+    "axios": "^1.5.0",
+    "eslint": "8.49.0",
+    "lint-staged": "^14.0.1",
+    "next": "13.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.7",
+    "react-redux": "^8.1.2",
+    "redux-persist": "^6.0.0",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.34.1",
+    "cross-env": "^7.0.3",
+    "eslint-config-next": "^13.5.2",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0"
+  }
+}
