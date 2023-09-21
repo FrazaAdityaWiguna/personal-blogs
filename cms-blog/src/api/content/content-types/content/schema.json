@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content",
     "pluralName": "contents",
-    "displayName": "Content"
+    "displayName": "Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,22 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "contents"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "views": {
+      "type": "integer",
+      "default": 0,
+      "required": true
     }
   }
 }
