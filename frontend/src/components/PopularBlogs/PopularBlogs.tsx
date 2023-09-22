@@ -24,7 +24,7 @@ const PopularBlogs = () => {
   const getListArticlesQuery: UseQueryOptions<ApiResponseListArticlesType> = {
     queryFn: () => getListArticles(),
     queryKey: [QUERY_KEY.GET_LIST_ARTICLES],
-    onSuccess: (data) => onSortViews(data.data.data),
+    onSuccess: (data) => setpopularArticles(data.data.data),
     refetchInterval: 1000 * 60 * 15,
   };
 
@@ -36,7 +36,7 @@ const PopularBlogs = () => {
       .sort((a, b) => b.attributes.views - a.attributes.views)
       .slice(0, 5);
 
-    setpopularArticles(sort);
+    return sort;
   }, []);
 
   const renderPopularBlogs = useMemo(() => {
@@ -63,7 +63,7 @@ const PopularBlogs = () => {
 
         <Stack gap={2} mt={2}>
           {popularArticles &&
-            popularArticles.map((article) => {
+            onSortViews(popularArticles).map((article) => {
               return (
                 <Box
                   key={article.id}
@@ -105,7 +105,7 @@ const PopularBlogs = () => {
         </Stack>
       </Stack>
     );
-  }, [isLoading, popularArticles, router]);
+  }, [isLoading, onSortViews, popularArticles, router]);
 
   return renderPopularBlogs;
 };
