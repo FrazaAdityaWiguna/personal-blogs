@@ -84,6 +84,22 @@ const Search = () => {
       );
     }
 
+    if (!listArticles || listArticles.data?.length === 0) {
+      return (
+        <Card
+          sx={{
+            width: "80%",
+            p: 4,
+            mt: 3,
+          }}
+        >
+          <Typography align="center" sx={{ fontWeight: "bold" }}>
+            Tidak menemukan hasil dari &quot;{searchParams.get("q")}&quot;
+          </Typography>
+        </Card>
+      );
+    }
+
     return (
       <>
         <Stack gap={2} my={2} flexDirection="row" flexWrap="wrap">
@@ -98,6 +114,7 @@ const Search = () => {
     listArticles,
     mutationGetListArticlesBySearch.isLoading,
     renderCardArticle,
+    searchParams,
   ]);
 
   return renderSearch;

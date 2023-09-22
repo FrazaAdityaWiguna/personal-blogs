@@ -75,6 +75,22 @@ const Home = () => {
       );
     }
 
+    if (!listArticles || listArticles.data?.length === 0) {
+      return (
+        <Card
+          sx={{
+            width: "80%",
+            p: 4,
+            mt: 3,
+          }}
+        >
+          <Typography align="center" sx={{ fontWeight: "bold" }}>
+            Belum ada articles
+          </Typography>
+        </Card>
+      );
+    }
+
     return (
       <Stack gap={2} flexDirection="row" flexWrap="wrap">
         {listArticles &&
