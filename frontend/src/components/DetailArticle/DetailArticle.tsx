@@ -33,7 +33,9 @@ const DetailArticle = () => {
 
     return (
       <Stack sx={{ maxWidth: "95%" }}>
-        <Typography>{dataArticle?.data.data.attributes.Title}</Typography>
+        <Typography sx={{ fontWeight: "bold", fontSize: "18px" }}>
+          {dataArticle?.data.data.attributes.Title}
+        </Typography>
         {dataArticle && (
           <ReactMarkdown>
             {dataArticle?.data.data.attributes.Description}

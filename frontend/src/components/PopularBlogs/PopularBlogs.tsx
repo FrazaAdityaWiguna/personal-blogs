@@ -94,7 +94,8 @@ const PopularBlogs = () => {
                         objectFit: "cover",
                         borderRadius: "5px",
                       }}
-                      loading="lazy"
+                      priority
+                      sizes="(min-width: 808px) 200px, 300px"
                     />
                   </Stack>
                   <Divider />

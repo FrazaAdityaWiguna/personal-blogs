@@ -1,5 +1,3 @@
-"use client";
-
 import { createAction } from "@reduxjs/toolkit";
 import { REDUCER } from "../constant/constant";
 import { ResponseListArticlesType } from "@/types/articles";

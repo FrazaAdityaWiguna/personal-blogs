@@ -50,7 +50,8 @@ const Search = () => {
               alt={article.attributes.Title}
               fill
               style={{ objectFit: "cover" }}
-              loading="lazy"
+              priority
+              sizes="(min-width: 808px) 200px, 300px"
             />
           </Box>
           <Box p={2}>

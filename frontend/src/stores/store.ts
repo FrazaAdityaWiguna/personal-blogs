@@ -1,5 +1,3 @@
-"use client";
-
 import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   FLUSH,
